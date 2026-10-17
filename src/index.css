@@ -1,0 +1,159 @@
+@import "tailwindcss";
+@import "@heroui/styles";
+
+:root {
+  --app-ink: #0f172a;
+  --app-muted: #64748b;
+  --app-surface: rgba(255, 255, 255, 0.92);
+  --app-line: rgba(15, 23, 42, 0.08);
+  --app-sky: #0ea5e9;
+  --app-teal: #14b8a6;
+}
+
+/* Dark theme colors */
+.dark {
+  --app-ink: #f8fafc;
+  --app-muted: #94a3b8;
+  --app-surface: rgba(30, 41, 59, 0.92);
+  --app-line: rgba(51, 65, 85, 0.8);
+  --app-sky: #3b82f6;
+  --app-teal: #22d3ee;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--app-ink);
+  background:
+    radial-gradient(1200px 500px at 10% -10%, rgba(14, 165, 233, 0.16), transparent 55%),
+    radial-gradient(900px 420px at 90% 0%, rgba(20, 184, 166, 0.14), transparent 50%),
+    linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
+  background-attachment: fixed;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.page-shell {
+  width: min(100% - 2rem, 42rem);
+  margin-inline: auto;
+  padding-block: 1rem 2.5rem;
+}
+
+.auth-shell {
+  min-height: calc(100vh - 8rem);
+  display: grid;
+  place-items: center;
+  padding: 1.5rem 1rem 2.5rem;
+}
+
+.auth-panel {
+  width: min(100%, 26rem);
+  border: 1px solid var(--app-line);
+  border-radius: 1.25rem;
+  background: var(--app-surface);
+  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(10px);
+  padding: 1.75rem 1.5rem;
+}
+
+.auth-panel--wide {
+  width: min(100%, 36rem);
+}
+
+.field-error {
+  margin-top: 0.4rem;
+  border-radius: 0.75rem;
+  background: #fef2f2;
+  color: #dc2626;
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 0.45rem 0.75rem;
+}
+
+.profile-cover {
+  background:
+    linear-gradient(135deg, rgba(14, 165, 233, 0.85), rgba(20, 184, 166, 0.75)),
+    url("https://images.unsplash.com/photo-1549880338-65ddcdfd017b?auto=format&fit=crop&w=1200&q=80");
+  background-size: cover;
+  background-position: center;
+}
+
+.feed-card {
+  border: 1px solid var(--app-line);
+  border-radius: 1rem;
+  background: var(--app-surface);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+  backdrop-filter: blur(8px);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.app-footer {
+  border-top: 1px solid var(--app-line);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  color: var(--app-muted);
+  font-size: 0.875rem;
+  text-align: center;
+  padding: 1rem;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark theme specific backgrounds */
+.dark body {
+  background:
+    radial-gradient(1200px 500px at 10% -10%, rgba(14, 165, 233, 0.16), transparent 55%),
+    radial-gradient(900px 420px at 90% 0%, rgba(20, 184, 166, 0.14), transparent 50%),
+    linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+  background-attachment: fixed;
+}
+
+.dark .app-footer {
+  border-top: 1px solid rgba(51, 65, 85, 0.8);
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(8px);
+  color: var(--app-muted);
+}
+
+/* Text color utilities */
+.text-primary-foreground {
+  color: var(--app-ink);
+}
+
+.text-secondary-foreground {
+  color: var(--app-muted);
+}
+
+.text-muted-foreground {
+  color: var(--app-muted);
+}
+
+/* Accent color utility (for buttons, links, etc.) */
+.text-accent {
+  color: var(--app-sky);
+}
+
+.border-accent {
+  border-color: var(--app-sky);
+}
+
+.bg-accent {
+  background-color: var(--app-sky);
+}
+
+/* Muted border utility */
+.border-muted-foreground {
+  border-color: var(--app-muted);
+}
+
+/* Ring color utility */
+.ring-primary {
+  border-color: var(--app-ink);
+}
+
+/* Ensure transitions work smoothly */
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+button{
+  @apply cursor-pointer
+}
