@@ -32,7 +32,7 @@ body {
 }
 
 .page-shell {
-  width: min(100% - 2rem, 42rem);
+  width: min(100% - 2rem, 60rem);
   margin-inline: auto;
   padding-block: 1rem 2.5rem;
 }

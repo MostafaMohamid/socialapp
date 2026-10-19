@@ -13,6 +13,7 @@ import ProtectRouter from './ProtectRouter/ProtectRouter'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import PostDetails from './Components/PostDetails/PostDetails'
 import { ToastContainer } from 'react-toastify';
+import AllSuggestedUsers from './Components/ALLsugestedUsers/AllsugestedUsers'
 
 const queryClient = new QueryClient()
 function App() {
@@ -24,7 +25,7 @@ function App() {
         { path: 'profile', element: <ProtectRouter ><Profile /></ProtectRouter> },
         { path: 'home', element: <ProtectRouter><Home /></ProtectRouter> },
         { path: 'postDetailes/:id', element: <ProtectRouter><PostDetails /></ProtectRouter> },
-
+        { path: 'allSuggestedUsers', element: <ProtectRouter><AllSuggestedUsers /></ProtectRouter> },
         { path: '*', element: <Notfound /> },
 
 
@@ -34,14 +35,14 @@ function App() {
 
   return (
     <>
-    
-        <AuthContextProvider>
-      <QueryClientProvider client={queryClient}>
+
+      <AuthContextProvider>
+        <QueryClientProvider client={queryClient}>
 
           <RouterProvider router={route} />
-        <ToastContainer />
-      </QueryClientProvider>
-        </AuthContextProvider>
+          <ToastContainer />
+        </QueryClientProvider>
+      </AuthContextProvider>
     </>
   )
 }
